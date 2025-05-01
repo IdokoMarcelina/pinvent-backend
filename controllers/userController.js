@@ -48,7 +48,7 @@ res.cookie("token", token, {
     path: "/",
     httpOnly: true,
     expires: new Date(Date.now() + 1000 * 86400),
-    samesite: "none",
+    samesite: "lax",
     secure: false
 });
 
