@@ -43,13 +43,14 @@ const user = await User.create({
 
 const token = generateToken(user._id)
 
+const isProduction = process.env.NODE_ENV === "production";
 
 res.cookie("token", token, {
     path: "/",
     httpOnly: true,
     expires: new Date(Date.now() + 1000 * 86400),
-    samesite: "lax",
-    secure: false
+    samesite: isProduction ? "none" : "lax",
+    secure: isProduction
 });
 
 
