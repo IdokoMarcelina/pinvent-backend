@@ -49,7 +49,7 @@ res.cookie("token", token, {
     httpOnly: true,
     expires: new Date(Date.now() + 1000 * 86400),
     samesite: "none",
-    secure: true
+    secure: false
 });
 
 
