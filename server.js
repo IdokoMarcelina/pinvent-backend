@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://pinvent-app.vercel.app"],
+  origin: ["http://localhost:5173", "https://pinvent-frontend-zeta.vercel.app/"],
   methods: "GET, PUT, POST, UPDATE, PATCH, DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
