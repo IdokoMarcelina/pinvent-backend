@@ -15,10 +15,15 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(bodyParser.json())
-app.use(cors({
-    origin: ["http://localhost:5173", "https://pinvent-app.vercel.app"],
-    credentials: true
-}))
+
+const corsOptions = {
+    origin: true,
+    methods: "GET, PUT, POST, UPDATE, PATCH, DELETE",
+    allowedHeaders: "Content-Type, Authorization",
+    credentials:true
+}
+app.use(cors(corsOptions));
+
 app.use(errorHandler);
 app.use(cookieParser())
 app.use('/uploads', express.static(path.join(__dirname, "uploads")))
