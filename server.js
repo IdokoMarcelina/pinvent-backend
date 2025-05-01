@@ -17,11 +17,12 @@ app.use(express.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 const corsOptions = {
-    origin: true,
-    methods: "GET, PUT, POST, UPDATE, PATCH, DELETE",
-    allowedHeaders: "Content-Type, Authorization",
-    credentials:true
-}
+  origin: ["http://localhost:5173", "https://pinvent-app.vercel.app"],
+  methods: "GET, PUT, POST, UPDATE, PATCH, DELETE",
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+};
+
 app.use(cors(corsOptions));
 
 app.use(errorHandler);
